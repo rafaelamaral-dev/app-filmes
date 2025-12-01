@@ -1,0 +1,88 @@
+/* ======== RESET BÁSICO ======== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ======== CONTAINER GERAL ======== */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;               /* <- garante que o título fique centralizado */
+}
+
+/* ======== TÍTULO ======== */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #222;
+}
+
+/* ======== FORMULÁRIO ======== */
+form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    border-radius: 8px;
+    border: 2px solid #999;
+    font-size: 1rem;
+}
+
+button {
+    padding: 10px 20px;
+    background: #3558ff;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #2744d8;
+}
+
+/* ======== FILMES CONTAINER ======== */
+#resultados {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 10px;
+}
+
+/* ======== CARD DO FILME ======== */
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: transform .2s;
+    text-align: center;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+

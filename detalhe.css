@@ -1,0 +1,74 @@
+/* ====== RESET ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #fafafa;
+    padding: 25px;
+    color: #222;
+}
+
+/* BOTÃO VOLTAR */
+button {
+    background: #007bff;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: .2s;
+}
+
+button:hover {
+    background: #005fcc;
+}
+
+/* TITULO */
+h1 {
+    margin-bottom: 25px;
+}
+
+/* CONTAINER PRINCIPAL */
+.filme-container {
+    display: flex;
+    gap: 25px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* POSTER */
+.filme-container img {
+    width: 260px;
+    border-radius: 10px;
+}
+
+/* INFO */
+.filme-info {
+    max-width: 600px;
+}
+
+.filme-info h2 {
+    margin-bottom: 10px;
+}
+
+.filme-info p {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+/* Responsividade */
+@media (max-width: 700px) {
+    .filme-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
