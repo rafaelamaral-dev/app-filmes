@@ -8,23 +8,27 @@
 </head>
 <body>
 
-    <div class="container">
-
+    <header class="header">
         <button class="back-btn" onclick="window.history.back()">← Voltar</button>
-
         <h1 id="titulo" class="movie-title"></h1>
+    </header>
 
-        <div class="movie-detail">
+    <main class="container">
+
+        <section class="movie-detail">
             <img id="poster" class="movie-poster" alt="Poster do Filme">
-            
+
             <div class="movie-info">
                 <p id="descricao" class="descricao"></p>
-                <p id="nota" class="nota"></p>
-                <p id="lancamento" class="lancamento"></p>
-            </div>
-        </div>
 
-    </div>
+                <div class="movie-meta">
+                    <p id="nota"></p>
+                    <p id="lancamento"></p>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <script src="detalhe.js"></script>
 </body>

@@ -1,4 +1,6 @@
-// 1 - Pegar o ID da URL
+// =========================
+// 1 - Pegar ID da URL
+// =========================
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 
@@ -7,14 +9,26 @@ if (!id) {
     throw new Error("ID não encontrado na URL");
 }
 
+// =========================
 // 2 - Selecionar elementos
-const titulo = document.getElementById('titulo');
-const poster = document.getElementById('poster');
-const descricao = document.getElementById('descricao');
-const nota = document.getElementById('nota');
-const lancamento = document.getElementById('lancamento');
+// =========================
+const titulo = document.getElementById("titulo");
+const poster = document.getElementById("poster");
+const descricao = document.getElementById("descricao");
+const nota = document.getElementById("nota");
+const lancamento = document.getElementById("lancamento");
 
+// =========================
+// LOADING temporário
+// =========================
+descricao.textContent = "Carregando...";
+nota.textContent = "";
+lancamento.textContent = "";
+
+
+// =========================
 // 3 - Buscar detalhes do filme
+// =========================
 async function carregarDetalhes() {
     try {
         const res = await fetch(
@@ -25,16 +39,33 @@ async function carregarDetalhes() {
 
         const filme = await res.json();
 
+        // =========================
         // 4 - Preencher na tela
-        titulo.textContent = `${filme.title} (${filme.release_date.slice(0,4)})`;
-        poster.src = `https://image.tmdb.org/t/p/w300${filme.poster_path}`;
-        descricao.textContent = filme.overview || "Sem descrição disponível.";
-        nota.textContent = `Nota média: ${filme.vote_average}`;
-        lancamento.textContent = `Lançamento: ${filme.release_date}`;
+        // =========================
+        const ano = filme.release_date ? filme.release_date.slice(0, 4) : "–";
+        titulo.textContent = `${filme.title} (${ano})`;
+
+        // Fallback caso não tenha poster
+        poster.src = filme.poster_path
+            ? `https://image.tmdb.org/t/p/w400${filme.poster_path}`
+            : "assets/no-poster.png";
+
+        poster.alt = `Poster do filme ${filme.title}`;
+
+        descricao.textContent =
+            filme.overview || "Nenhuma descrição disponível.";
+
+        nota.innerHTML = `<strong>Nota média:</strong> ${filme.vote_average ?? "–"}`;
+        lancamento.innerHTML = `<strong>Lançamento:</strong> ${filme.release_date ?? "–"}`;
 
     } catch (err) {
         console.error(err);
-        document.body.innerHTML = "<h2>Erro ao carregar detalhes.</h2>";
+
+        document.querySelector(".movie-detail").innerHTML = `
+            <p style="font-size:18px; color:#900; text-align:center;">
+                Erro ao carregar detalhes do filme.
+            </p>
+        `;
     }
 }
 

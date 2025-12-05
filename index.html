@@ -10,16 +10,23 @@
 
 <div class="container">
 
-    <h1>Buscar Filmes</h1>
+    <header class="topo">
+        <h1 class="titulo">Buscar Filmes</h1>
+    </header>
 
-    <form onsubmit="return false">
-        <input type="text" id="buscarFilme" placeholder="Digite o nome do filme...">
+    <form class="busca-form" onsubmit="return false">
+        <input 
+            type="text" 
+            id="buscarFilme" 
+            placeholder="Digite o nome do filme..."
+            autocomplete="off"
+        >
         <button id="btnBuscar">Buscar</button>
     </form>
 
-    <p id="status"></p>
+    <p id="status" class="status-msg"></p>
 
-    <div id="resultados"></div>
+    <section id="resultados" class="lista-filmes"></section>
 
 </div>
 
