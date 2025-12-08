@@ -1,34 +1,37 @@
-# 🎬 Buscador de Filmes — TMDB API
+# 🎬 Buscador de Filmes (TMDB API)
 
-Aplicação web simples que permite buscar filmes usando a API do The Movie Database (TMDB).  
-O usuário digita o nome do filme, vê uma lista de resultados e pode clicar para abrir a página de detalhes com pôster, descrição, nota e data de lançamento.
-
----
+Aplicação web que permite buscar filmes, visualizar informações básicas e acessar uma página de detalhes completa consumindo a API do The Movie Database (TMDB).
 
 ## 🚀 Funcionalidades
 
-- Busca filmes por nome  
-- Exibe lista com título, pôster e ano  
-- Página de detalhes com informações completas  
-- Consumo da TMDB API utilizando **fetch()**  
-- Código organizado com **async/await**  
-- Layout responsivo  
-- Navegação entre páginas usando **query params** (`detalhe.html?id=123`)
-
----
+* Busca filmes por nome
+* Exibe cards com título, nota e poster
+* Página de detalhes com título, sinopse, nota e data de lançamento
+* Navegação entre páginas usando query params
+* Consumo de API usando **fetch + async/await**
+* Layout responsivo
 
 ## 🛠 Tecnologias utilizadas
 
-- **HTML5**  
-- **CSS3**  
-- **JavaScript (ES6+)**  
-- **Fetch API / async–await**  
-- **TMDB API**
+* HTML5
+* CSS3
+* JavaScript (ES6+)
+* Fetch API
+* TMDB API
 
----
+## 📸 Preview
+
+*(adicione um print do seu projeto na pasta)*
+
+```
+/assets/preview.png
+```
+
+![App Filmes](./assets/print-app-filmes.png)
 
 ## 📂 Estrutura do projeto
 
+```
 /
 │── index.html
 │── detalhe.html
@@ -37,35 +40,33 @@ O usuário digita o nome do filme, vê uma lista de resultados e pode clicar par
 │── script.js
 │── detalhe.js
 └── assets/
+```
 
----
+## ▶ Como executar
 
-## 🔧 Como rodar o projeto localmente
+1. Clone o repositório:
 
-1. Baixe o repositório  
-
+```
 git clone https://github.com/rafaelamaral-dev/app-filmes.git
+```
 
-2. Abra o arquivo **index.html** no navegador  
-3. Digite o nome de um filme e clique para ver os detalhes  
-
----
+2. Abra o arquivo **index.html** no navegador
+3. Digite o nome de um filme e clique em **Buscar**
+4. Clique em qualquer card para abrir os detalhes
 
 ## 🌐 Deploy
 
-Acesse o projeto online:  
-👉 **https://rafaelamaral-dev.github.io/app-filmes/**
+Acesse a versão online:
+➡ [https://rafaelamaral-dev.github.io/app-filmes/](https://rafaelamaral-dev.github.io/app-filmes/)
 
----
+## 📌 Objetivo do projeto
 
-## 📌 Sobre
+Praticar:
 
-Projeto criado para praticar:
-
-- Manipulação do DOM  
-- Requisições assíncronas (fetch)  
-- Integração com API externa  
-- Organização de código  
-- Uso de query params  
+* Manipulação de DOM
+* Requisições assíncronas
+* Consumo de API externa
+* Organização de código
+* Construção de interfaces simples e funcionais
 
 ---
